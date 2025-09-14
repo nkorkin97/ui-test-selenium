@@ -11,9 +11,8 @@ import pages.base.BasePage;
 
 import static managers.DriverManager.getDriver;
 
-public class HomePage extends BasePage {
+public class HomePage {
 
-    private static final ThreadLocal<HomePage> homePage = new ThreadLocal<>();
     @FindBy(xpath = "//div[@class='card-body']//h5[contains(text(), 'Elements')]")
     WebElement elementsCard;
 

@@ -13,10 +13,19 @@ public class HomePageTest extends BaseTest {
     void test() throws InterruptedException {
         app.getHomePage()
                 .clickElementsCard()
-                .checkEndpoint(ELEMENTS)
-                .getLeftPanel().clickElementsGroup(TEXT_BOX);
+                .checkEndpoint(ELEMENTS);
 
-        app.getTextBoxPage().checkEndpoint(TEXT_BOX);
-//        sleep(10000);
+        app.getTextBoxPage()
+                .getLeftPanel()
+                .clickElementsGroup(TEXT_BOX);
+
+        app.getTextBoxPage()
+                .checkEndpoint(TEXT_BOX);
+
+        app.getTextBoxPage()
+                .getLeftPanel()
+                .clickElementsGroup(CHECK_BOX);
+
+        sleep(10000);
     }
 }
