@@ -15,6 +15,8 @@ public class HomePageTest extends BaseTest {
                 .clickElementsCard()
                 .checkEndpoint(ELEMENTS)
                 .getLeftPanel().clickElementsGroup(TEXT_BOX);
+
+        app.getTextBoxPage().checkEndpoint(TEXT_BOX);
 //        sleep(10000);
     }
 }
