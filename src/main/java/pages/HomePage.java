@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import pages.base.BasePage;
 
-import static helpers.Cards.ELEMENTS;
 import static managers.DriverManager.getDriver;
 
 public class HomePage extends BasePage {

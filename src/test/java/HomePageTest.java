@@ -12,9 +12,10 @@ public class HomePageTest extends BaseTest {
 
 
     @Test
-    void test() {
+    void test() throws InterruptedException {
         app.getHomePage()
                 .clickElementsCard()
-                .checkEndpoint(ELEMENTS);
+                .checkEndpoint(ELEMENTS)
+                .getLeftPanel().clickBtn("Check Box");
     }
 }
