@@ -1,6 +1,7 @@
 import base.BaseTest;
 import helpers.Cards;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import static helpers.Cards.*;
 import static java.lang.Thread.sleep;
@@ -10,7 +11,7 @@ public class HomePageTest extends BaseTest {
 
 
 
-    @org.testng.annotations.Test
+    @Test
     void test() {
         app.getHomePage()
                 .clickElementsCard()
