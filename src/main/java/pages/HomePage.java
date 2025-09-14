@@ -13,6 +13,7 @@ import static managers.DriverManager.getDriver;
 
 public class HomePage extends BasePage {
 
+    private static final ThreadLocal<HomePage> homePage = new ThreadLocal<>();
     @FindBy(xpath = "//div[@class='card-body']//h5[contains(text(), 'Elements')]")
     WebElement elementsCard;
 
@@ -30,7 +31,8 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public void init(WebDriver webDriver) {
+    public HomePage init(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
+        return this;
     }
 }

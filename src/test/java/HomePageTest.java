@@ -1,11 +1,9 @@
 import base.BaseTest;
-import helpers.Cards;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static helpers.Cards.*;
+import static helpers.ElementsGroup.*;
 import static java.lang.Thread.sleep;
-import static managers.DriverManager.getDriver;
 
 public class HomePageTest extends BaseTest {
 
@@ -16,6 +14,7 @@ public class HomePageTest extends BaseTest {
         app.getHomePage()
                 .clickElementsCard()
                 .checkEndpoint(ELEMENTS)
-                .getLeftPanel().clickBtn("Check Box");
+                .getLeftPanel().clickElementsGroup(TEXT_BOX);
+//        sleep(10000);
     }
 }
