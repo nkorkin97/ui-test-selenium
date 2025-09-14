@@ -1,21 +1,21 @@
 package helpers;
 
 public enum Cards {
-    ELEMENTS("Elements"),
-    FORMS("Forms"),
-    ALERTS("Alerts, Frame & Windows"),
-    WIDGETS("Widgets"),
-    INTERACTIONS("Interactions"),
-    BOOKSTORE("Book Store Application");
+    ELEMENTS("Elements", "/elements"),
+    FORMS("Forms", "/forms");
 
-    String name;
+    private final String name;
+    private final String endpoint;
 
-    Cards(String name) {
+    Cards(String name, String endpoint) {
         this.name = name;
+        this.endpoint = endpoint;
     }
 
     public String getCardName() {
         return this.name;
     }
-
+    public String getCardEndpoint() {
+        return this.endpoint;
+    }
 }

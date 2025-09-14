@@ -14,7 +14,7 @@ public class BaseTest {
     @BeforeMethod
     public void beforeMethod() {
         driver = getDriver();
-        app = new AppManager(driver);
+        app = new AppManager();
         getDriver().get("https://demoqa.com/");
     }
 
