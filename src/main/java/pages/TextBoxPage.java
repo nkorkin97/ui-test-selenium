@@ -6,14 +6,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pages.base.BasePage;
 
-import java.nio.file.WatchEvent;
-
 import static managers.DriverManager.getDriver;
 
 public class TextBoxPage extends BasePage {
 
-    public void init(WebDriver webDriver) {
+    public TextBoxPage init(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
+        return this;
     }
 
     public TextBoxPage checkEndpoint(ElementsGroup element) {

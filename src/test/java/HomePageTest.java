@@ -1,5 +1,6 @@
 import base.BaseTest;
 import org.testng.annotations.Test;
+import pages.TextBoxPage;
 
 import static helpers.Cards.*;
 import static helpers.ElementsGroup.*;
@@ -15,17 +16,9 @@ public class HomePageTest extends BaseTest {
                 .clickElementsCard()
                 .checkEndpoint(ELEMENTS);
 
-        app.getTextBoxPage()
+            app.getTextBoxPage()
                 .getLeftPanel()
-                .clickElementsGroup(TEXT_BOX);
-
-        app.getTextBoxPage()
-                .checkEndpoint(TEXT_BOX);
-
-        app.getTextBoxPage()
-                .getLeftPanel()
-                .clickElementsGroup(CHECK_BOX);
-
-        sleep(10000);
+                .clickTextBox()
+                    .checkEndpoint(TEXT_BOX).getLeftPanel();
     }
 }

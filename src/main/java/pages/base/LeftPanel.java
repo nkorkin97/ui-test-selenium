@@ -1,6 +1,7 @@
 package pages.base;
 
 import helpers.ElementsGroup;
+import managers.AppManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,7 @@ import pages.TextBoxPage;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import static managers.AppManager.getTextBoxPage;
 import static org.openqa.selenium.By.*;
 
 public class LeftPanel {
@@ -20,6 +22,7 @@ public class LeftPanel {
     public void init(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
+    
     public void clickElementsGroup(ElementsGroup elementsGroup) {
         WebElement element = elementsList
                 .stream()
@@ -27,7 +30,12 @@ public class LeftPanel {
                         .findElements(xpath("./span[contains(text(), '" + elementsGroup.getElementsGroupName() + "')]")).isEmpty())
                 .findFirst()
                 .orElseThrow(() -> new NoSuchElementException("Элемент с текстом '" + elementsGroup.getElementsGroupName() + "' не найден"));
-
+        
         element.click();
+    }
+
+    public TextBoxPage clickTextBox() {
+        clickElementsGroup(ElementsGroup.TEXT_BOX);
+        return getTextBoxPage();
     }
 }

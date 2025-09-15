@@ -6,11 +6,12 @@ public class BasePage {
 
     LeftPanel leftPanel;
 
+    public BasePage() {
+        this.leftPanel = new LeftPanel();
+        leftPanel.init(getDriver());
+    }
+
     public LeftPanel getLeftPanel() {
-        if (leftPanel == null) {
-            leftPanel = new LeftPanel();
-            leftPanel.init(getDriver());
-        }
-        return this.leftPanel;
+        return leftPanel;
     }
 }

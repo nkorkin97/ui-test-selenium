@@ -11,6 +11,7 @@ public class BaseTest {
 
     public WebDriver driver;
     public AppManager app;
+
     @BeforeMethod
     public void beforeMethod() {
         driver = getDriver();
