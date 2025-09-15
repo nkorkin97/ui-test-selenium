@@ -18,7 +18,6 @@ public class HomePageTest extends BaseTest {
 
             app.getTextBoxPage()
                 .getLeftPanel()
-                .clickTextBox()
-                    .checkEndpoint(TEXT_BOX).getLeftPanel();
+                .clickTextBox().checkEndpoint(TEXT_BOX);
     }
 }

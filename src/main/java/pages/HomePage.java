@@ -11,7 +11,7 @@ import pages.base.BasePage;
 
 import static managers.DriverManager.getDriver;
 
-public class HomePage {
+public class HomePage extends BasePage {
 
     @FindBy(xpath = "//div[@class='card-body']//h5[contains(text(), 'Elements')]")
     WebElement elementsCard;
@@ -22,11 +22,6 @@ public class HomePage {
 
     public HomePage clickElementsCard() {
         elementsCard.click();
-        return this;
-    }
-
-    public HomePage checkEndpoint(Cards element) {
-        Assert.assertTrue(getDriver().getCurrentUrl().contains(element.getCardEndpoint()));
         return this;
     }
 

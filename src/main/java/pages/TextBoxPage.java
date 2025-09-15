@@ -14,9 +14,4 @@ public class TextBoxPage extends BasePage {
         PageFactory.initElements(webDriver, this);
         return this;
     }
-
-    public TextBoxPage checkEndpoint(ElementsGroup element) {
-        Assert.assertTrue(getDriver().getCurrentUrl().contains(element.getElementsGroupEndpoint()));
-        return this;
-    }
 }
