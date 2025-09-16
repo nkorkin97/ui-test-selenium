@@ -28,7 +28,8 @@ public class BasePage {
     }
 
     public BasePage checkEndpoint(ElementsGroup element) {
-        Assert.assertTrue(getDriver().getCurrentUrl().contains(element.getElementsGroupEndpoint()));
+        wait.until(ExpectedConditions.urlContains(element.getElementsGroupEndpoint()));
+//        Assert.assertTrue(getDriver().getCurrentUrl().contains(element.getElementsGroupEndpoint()));
         return this;
     }
 }
