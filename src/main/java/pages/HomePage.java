@@ -2,6 +2,7 @@ package pages;
 
 
 import helpers.Cards;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,9 +20,12 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[@class='card-body']//h5[contains(text(), 'Forms')]")
     WebElement formsCard;
 
+    String template = "//div[@class='card-body']//h5[contains(text(), '%s')]/ancestor::div[contains(@class, 'top-card')]";
 
-    public HomePage clickElementsCard() {
-        elementsCard.click();
+
+    public HomePage clickElementsCard(Cards card) {
+        WebElement element = getDriver().findElement(By.xpath(String.format(template, card.getCardName())));
+        element.click();
         return this;
     }
 

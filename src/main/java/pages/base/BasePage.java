@@ -2,10 +2,11 @@ package pages.base;
 
 import helpers.Cards;
 import helpers.ElementsGroup;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import pages.HomePage;
 
 import static managers.DriverManager.getDriver;
+import static managers.DriverManager.wait;
 
 public class BasePage {
 
@@ -20,8 +21,9 @@ public class BasePage {
         return leftPanel;
     }
 
-    public BasePage checkEndpoint(Cards element) {
-        Assert.assertTrue(getDriver().getCurrentUrl().contains(element.getCardEndpoint()));
+    public BasePage checkEndpoint(Cards card) {
+        wait.until(ExpectedConditions.urlContains(card.getCardEndpoint()));
+//        Assert.assertTrue(getDriver().getCurrentUrl().contains(card.getCardEndpoint()));
         return this;
     }
 
