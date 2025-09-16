@@ -1,16 +1,20 @@
 import base.BaseTest;
+import data_owner.textbox.TextBoxData;
+import org.aeonbits.owner.ConfigFactory;
 import org.testng.annotations.Test;
-import pages.TextBoxPage;
 
 import static helpers.Cards.*;
 import static java.lang.Thread.sleep;
 
-public class HomePageTest extends BaseTest {
+public class TextBoxPage extends BaseTest {
 
 
 
     @Test
     void test() throws InterruptedException {
+
+        TextBoxData textBoxData = ConfigFactory.create(TextBoxData.class);
+
         app.getHomePage()
                 .clickElementsCard(ELEMENTS)
                 .checkEndpoint(ELEMENTS)
@@ -20,7 +24,9 @@ public class HomePageTest extends BaseTest {
                 .checkDisclosureButtonCollapse(ELEMENTS)
                 .clickDisclosureButton(ELEMENTS)
                 .checkDisclosureButtonShow(ELEMENTS)
-                .clickTextBox();
-        sleep(3000);
+                .clickTextBox()
+                .fillFullName(textBoxData.fullName());
+
+        sleep(10000);
     }
 }

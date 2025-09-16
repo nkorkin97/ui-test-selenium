@@ -9,6 +9,22 @@ public class AppManager {
 //    HomePage homePage;
 //    TextBoxPage textBoxPage;
 
+//        public HomePage getHomePage() {
+//        if (homePage == null) {
+//            homePage = new HomePage();
+//            homePage.init(getDriver());
+//        }
+//        return this.homePage;
+//    }
+//
+//    public TextBoxPage getTextBoxPage() {
+//        if (textBoxPage == null) {
+//            textBoxPage = new TextBoxPage();
+//            textBoxPage.init(getDriver());
+//        }
+//        return this.textBoxPage;
+//    }
+
     public static ThreadLocal<HomePage> homePage = new ThreadLocal<>();
     public static ThreadLocal<TextBoxPage> textBoxPage = new ThreadLocal<>();
 
@@ -33,23 +49,4 @@ public class AppManager {
     public static void createTextBoxPage() {
         textBoxPage.set(new TextBoxPage().init(getDriver()));
     }
-
-
-//    public HomePage getHomePage() {
-//        if (homePage == null) {
-//            homePage = new HomePage();
-//            homePage.init(getDriver());
-//        }
-//        return this.homePage;
-//    }
-//
-//    public TextBoxPage getTextBoxPage() {
-//        if (textBoxPage == null) {
-//            textBoxPage = new TextBoxPage();
-//            textBoxPage.init(getDriver());
-//        }
-//        return this.textBoxPage;
-//    }
-
-
 }
