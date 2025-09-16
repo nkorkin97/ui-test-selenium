@@ -28,6 +28,9 @@ public class TextBoxPage extends BasePage {
     @FindBy(xpath = "//button[@id='submit']")
     WebElement buttonSubmit;
 
+    @FindBy(xpath = "//div[@id='output']")
+    WebElement fieldOutput;
+
     public TextBoxPage init(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
         return this;
@@ -35,6 +38,26 @@ public class TextBoxPage extends BasePage {
 
     public TextBoxPage fillFullName(String fullName) {
         fieldFullName.sendKeys(fullName);
+        return this;
+    }
+
+    public TextBoxPage fillEmail(String email) {
+        fieldEmail.sendKeys(email);
+        return this;
+    }
+
+    public TextBoxPage fillCurrentAddress(String currentAddress) {
+        fieldCurrentAddress.sendKeys(currentAddress);
+        return this;
+    }
+
+    public TextBoxPage fillPermanentAddress(String permanentAddress) {
+        fieldPermanentAddress.sendKeys(permanentAddress);
+        return this;
+    }
+
+    public TextBoxPage clickSubmit() {
+        buttonSubmit.click();
         return this;
     }
 }
