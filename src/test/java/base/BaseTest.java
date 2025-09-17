@@ -15,12 +15,12 @@ public class BaseTest {
     public WebDriver driver;
     public AppManager app;
 
-//    WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
 
     @BeforeMethod
     public void beforeMethod() {
         driver = getDriver();
         app = new AppManager();
+        getDriver().manage().window().maximize();
         getDriver().get("http://85.192.34.140:8081/");
     }
 

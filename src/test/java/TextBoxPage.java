@@ -4,14 +4,12 @@ import org.aeonbits.owner.ConfigFactory;
 import org.testng.annotations.Test;
 
 import static helpers.Cards.*;
-import static java.lang.Thread.sleep;
 
 public class TextBoxPage extends BaseTest {
 
 
-
     @Test
-    void test() throws InterruptedException {
+    void fillFormTest() {
 
         TextBoxData textBoxData = ConfigFactory.create(TextBoxData.class);
 
@@ -25,8 +23,11 @@ public class TextBoxPage extends BaseTest {
                 .clickDisclosureButton(ELEMENTS)
                 .checkDisclosureButtonShow(ELEMENTS)
                 .clickTextBox()
-                .fillFullName(textBoxData.fullName());
-
-        sleep(10000);
+                .fillFullName(textBoxData)
+                .fillEmail(textBoxData)
+                .fillCurrentAddress(textBoxData)
+                .fillPermanentAddress(textBoxData)
+                .clickSubmit()
+                .checkOutput(textBoxData);
     }
 }
